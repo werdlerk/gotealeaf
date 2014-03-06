@@ -6,4 +6,5 @@ class Array
 end
 
 a = [1,2,3]
-puts "This is the number: #{a}"
+warn "This is the number: #{a}"
+
