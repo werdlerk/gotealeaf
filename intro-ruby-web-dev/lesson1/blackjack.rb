@@ -72,7 +72,7 @@ end
 def ask_game_number
   empty_line = "|" + String.new.ljust(@inner_width) + "|"
   text5_line = "|" + "Do you wish to replay a certain game number?".center(@inner_width) + "|"
-  text6_line = "|" + "We play a random game if you enter no game number.".center(@inner_width) + "|"
+  text6_line = "|" + "We play a random game if you enter no (valid) game number.".center(@inner_width) + "|"
   single_line = "+" + "-" * (@inner_width) + "+"
   special_line = "+".center(@fullscreen_width, '=')
   input_cursor = "|      => "
