@@ -188,19 +188,6 @@ end
 
 def card_value(card)
   return @card_types_values[@card_types.index(card[:type])]
-
-  # return card_type.to_i if card_type.to_i.to_s == card_type
-
-  # case card_type
-  # when "ace"
-  #   return 1
-  # when "jack"
-  #   return 10
-  # when "queen"
-  #   return 10
-  # when "king"
-  #   return 10      
-  # end
 end
 
 def cards_total_value(cards)
