@@ -1,0 +1,33 @@
+1) 
+  HTML stands for HyperText Markup Language. It's the code that renders and lays out the elements in the browser for viewing.
+  CSS stands for Cascading StyleSheet. It's the code that adds styling to the elements in the browser for viewing.
+  Javascript is the dynamic language in the browser that makes it possible to perform dynamic actions directly in the browser without the need of a server side.
+
+2) Major parts of a HTTP request; method, URL, HTTP version and request parameters
+
+3) Major parts of a HTTP response; HTTP status code, response headers and response body
+
+4) In the browser use a form;
+  <form method="post">
+    <input type="text" name="username" value="bob" />
+  </form>
+  For a GET request, change the method attribute of the form element or remove the attribute.
+
+5) Because as a web developer you have to realize that on every request you have to rebuild the state of the application to the user. This makes it necessary to track the state throughout the flow of an application.
+
+6) We use browsers as they are thin clients; they don't know anything about the application (website) they will be showing.
+   It's possible to not use browser but locally installed applications instead. Many mobile applications do this.
+
+7) MVC stands for Model View Controller and is the design pattern for creating applications in Ruby (on Rails). It seperates the Model, the View and the Controller from eachother; realizing loose coupling and making it possible to replace one of these components by one from another language (usually only in theory).
+
+--- Sinatra
+
+1) Requests are processed through the proper routing that's configured for the specific request in the main ruby file.
+
+2) With redirection, the browser is given the HTTP redirection code so the browser does another GET request to a different URL. With rendering a template, the browser is returned HTML as it expects from it's GET/POST/... request.
+
+3) By embedding ruby code in either the <% ... %> or the <%= ... %> tags. The return value from the last tag is put directly in the HTML and can be used to display (dynamic) content.
+
+4) After the controller has pointed to the template for rendering 
+
+5) Instance variables are only kept during one request. So an instance variable that's declared in the controller only lasts until the rendering of the ERB template is complete. 

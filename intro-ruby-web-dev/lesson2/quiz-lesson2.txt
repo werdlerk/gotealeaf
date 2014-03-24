@@ -1,0 +1,33 @@
+1. 
+  a = 1               => local Fixnum variable with value 1
+  @a = 2              => instance Fixnum variable with value 2
+  user = User.new     => instance User variable with new instance of User
+  user.name           => instance getter method 'name'
+  user.name = "Joe"   => instance setter method, setting 'name' to 'Joe'
+
+2. By setting 'include ...' after the class definition:
+    class User
+      include Validatable
+
+    end
+
+3. Class variables exists as soon as the class is accessable and can be 
+   accessed without an instance of the class, instance variables only exist in an instance of the class
+
+  Answer: A class variable is shared among the class and all of its descendants. It also begins with two @@ symbols. An instance variable is not shared by the class' descendants and it begins with one @ symbol.
+
+4. attr_accessor creates a getter and a setter method. 
+
+5. calls the class method 'some_method' of class Dog
+
+6. with subclassing, all methods are inherited from the superclass. 
+   Mixing in modules is including specific methods into the class
+
+7. def initialize(name) 
+      @name = name
+   end
+
+8. yes
+
+9. Look at the error message to figure out the line and/or use binding.pry to figure where the bug is.
+
