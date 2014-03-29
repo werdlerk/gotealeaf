@@ -1,0 +1,33 @@
+1) 
+  HTML stands for HyperText Markup Language. It's the code for rendering and laying out the elements in the browser for viewing.
+  CSS stands for Cascading StyleSheet. It's the code that adds styling and look & feel to the elements in the browser for viewing. CSS hooks on HTML elements by using CSS selectors and manipulates the look & feel of those elements.
+  Javascript is more like a programming language that executes in the browser (client-side). Javascript makes it possible to perform dynamic actions directly in the browser without the need of a server side. JQuery is a library that makes it more easier to program JavaScript because it hides the complexity of programming for different browsers.
+
+2) Major parts of a HTTP request; method, URL, HTTP version and request parameters
+
+3) Major parts of a HTTP response; HTTP status code, response headers and response body
+
+4) In the browser use a form;
+  <form method="post">
+    <input type="text" name="username" value="bob" />
+  </form>
+  For a GET request, change the method attribute of the form element or remove the attribute.
+
+5) Because as a web developer you have to realize that on every request you have to rebuild the state of the application to the user. This makes it necessary to track the state throughout the flow of an application.
+
+6) We use browsers as they are thin clients; they don't know anything about the application (website) they will be showing.
+   It's possible to not use browser but locally installed applications instead. Many mobile applications do this.
+
+7) MVC stands for Model View Controller and is the design pattern for creating applications in Ruby (on Rails). It seperates the Model, the View and the Controller from eachother; realizing loose coupling and making it possible to replace one of these components by one from another language (usually only in theory).
+
+--- Sinatra
+
+1) Requests are processed through the proper routing that's configured for the specific request in the main ruby file. Then a redirect can be done or HTML can be send by rendering a template.
+
+2) With redirection, the browser is given the HTTP redirection code so the browser does another GET request to a different URL. With rendering a template (HTTP status code 200 OK), the browser is returned HTML as it expects from it's GET/POST/... request.
+
+3) By embedding ruby code in either the <% ... %> or the <%= ... %> tags. The return value from the last tag is put directly in the HTML and can be used to display (dynamic) content.
+
+4) ERB template is rendered into HTML after the controller has pointed to the template for rendering (thus on each request)
+
+5) Instance variables are only kept during one request. So an instance variable that's declared in the controller only lasts until the rendering of the ERB template is complete. 
