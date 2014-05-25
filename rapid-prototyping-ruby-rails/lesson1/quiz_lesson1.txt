@@ -1,0 +1,102 @@
+1) We call a database a relational database when it can store the relations between objects in the database. 
+   This is done using primary and foreign key relationships between tables. 
+   >> the tables in the database are associated with eachother. This association can be created with primary/foreign keys and various syntax.
+
+2) SQL stands for Structured Query Language. It's a specific language to manage data in a (relational) database.
+
+3) Structure and data view. The structure view shows the structure of tables in the database; it shows primarily the names and datatypes of the columns in the table. The data view shows the data stored in the table. 
+
+4) Primary key column 
+
+5) Foreign key column is a column in a table that references to a primary key column of a (different) table. It is used to create relationships to other objects (tables). For example, a Post having an author. The posts table will have a foreign key column referencing the primary key of the author (user id).
+
+6) Active Record will match table names with the names of the model objects. The names of model objects are lowercased, plurarized and snake_cased to match the table names. Using this feature, Active Record is able to perform CRUD actions via the model on the database.
+
+>> ActiveRecord is a way to access the database. A database table is related to a class. An object of that class is created as a row in the table. This object can have different attribute values shown as the columns in the table. We can create, retrieve, update, and delete the object instances by altering the database table.
+
+7) crazy_monkies
+
+>> crazy_monkeys
+
+8) 
+  Project.rb:
+    has_many :issues
+
+  Issue.rb:
+    belongs_to :project
+
+  [DB] table `issues`
+    FK project_id
+
+9) - I expect the other model to be an singular ActiveRecord::Base object 'Animal' and expect the database schema to have a table named 'animals' with a column named 'zoo_id'
+   - zoo.animals.size .. 
+
+   >> zoo.animals ==> list of all animals
+   >> zoo.animals.first ==> return first row of data in the animals table
+   >> You can also iterate through the list of a zoo's animals and display certain properties of the animals.
+   
+   - san_diego_zoo = Zoo.find(5)
+     jumpster = Animal.create(name: 'Jumpster')
+     san_diego_zoo.animals << jumpster
+
+10) Mass Assignment is assigning the properties of an ActiveRecord object as parameters in the create() method. This prevents using each setter to set
+    the corresponding property of the ActiveRecord object
+
+    >> Mass assignment : 
+      Post.new(title: 'My first post', topic: 'Life')
+      Post.create(title: 'My first post', topic: 'Life')
+
+    >> Non-mass assignment:
+      post = Post.new
+      post.title = 'My first post'
+      post.topic = 'Life'
+
+11) returns the first Animal object from the database, basically the first row from the database having the lowest primary key.
+
+12) animal = Animal.new(name: 'Joe')
+    if you use the .save() method, it saves to the database.
+    Creation and persistence can be done in once using the Animal.create(...) method
+
+13) It uses a join table for the primary keys of the both objets
+
+    >> On the database level of a M:M association, we use a join table to support it. Both of the primary models will each have a 1:M association with the join table. By using the has_many :through technique, we are able to create an indirect M:M association with the two primary models.
+
+14) has_many :animals, through: :cages
+    pros:
+      - able to manage the relation using cages objects
+      - add properties to the relation objects by adding properties to cages
+
+    cons:
+      - more cumbersome to add a relation object (?)
+
+    has_and_belongs_to_many :animals
+    pros:
+      - automatically manages the relation objects
+
+    cons:
+      - unable to add properties to the relation objects
+
+    >> The two ways to support a M:M association are the has_many :through and has_and_belongs_to_many methods.
+      has_many :through requires an explicit join model and a join table, but it is more flexible and we can add additional attributes to the join table.
+      has_and_belongs_to_many doesn't require a join model or a join table, but it is less flexible and we cannot add additional attributes to the join table.
+
+15) Suppose we have a User model and a Group model, and we have a M:M association all set up. How do we associate the two?
+
+    class User < ActiveRecord::Base
+      has_many :user_groups
+      has_many :groups, through: :user_groups
+    end
+
+    class UserGroup < ActiveRecord::Base
+      belongs_to :user
+      belongs_to :group
+    end
+
+    class Group < ActiveRecord::Base
+      has_many :user_groups
+      has_many :users, through: :user_groups
+    end
+
+
+
+
